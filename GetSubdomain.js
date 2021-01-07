@@ -10,7 +10,7 @@
  * 1. 一个完整的域名由二个或二个以上部分组成，各部分之间用英文的句号"."来分隔；
  * 2. 在设置 cookie 时，如省略 domain 参数，那么它默认设置为当前域名；
  * 3. domain 参数可以设置父域名以及当前域名，不能设置为其他域名，包括子域名；
- * 2. cookie 的作用域是 domain 本身以及 domain 下的所有子域名；
+ * 4. cookie 的作用域是 domain 本身以及 domain 下的所有子域名；(这里忽略 path 参数限制，当做 "/")
  *
  * 以 https://shortcuts.sspai.com 为例，思路是这样的：
  * 接着我们对 URL 进行拆分，按先后顺序对 com、sspai.com、shortcuts.sspai.com （以此类推）设置 cookie
