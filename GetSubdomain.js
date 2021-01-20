@@ -27,8 +27,8 @@ function getSubdomain() {
     const reg = new RegExp(`(^|;)\\s*${key}=12345`)
     const ipAddressReg = /^(\d{1,2}|1\d\d|2[0-4]\d|25[0-5])\.(\d{1,2}|1\d\d|2[0-4]\d|25[0-5])\.(\d{1,2}|1\d\d|2[0-4]\d|25[0-5])\.(\d{1,2}|1\d\d|2[0-4]\d|25[0-5])$/
 
-    // 若为 IP 地址，则直接返回
-    if (ipAddressReg.test(domain)) {
+    // 若为 IP 地址、localhost，则直接返回
+    if (ipAddressReg.test(domain) || domain === 'localhost') {
       return domain
     }
 
@@ -48,8 +48,8 @@ function getSubdomain() {
       }
     }
 
-    return subdomain || document.cookie
+    return subdomain || document.domain
   } catch (e) {
-    return document.cookie
+    return document.domain
   }
 }
