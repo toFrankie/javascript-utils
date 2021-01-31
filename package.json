@@ -10,7 +10,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "eslint:fix": "eslint --fix . --ext .js",
-    "prettier:fix": "prettier --config .prettierrc.js --write './**/*.{js,css,json}'",
+    "prettier:fix": "prettier --config .prettierrc.js --write './**/*.{js,css,html,json}'",
     "format": "npm-run-all -s prettier:fix eslint:fix",
     "commit": "git-cz",
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0"
@@ -40,7 +40,7 @@
       "prettier --config .prettierrc.js --write",
       "eslint --fix --ext .js"
     ],
-    "*.{json,css}": "prettier --config .prettierrc.js --write"
+    "*.{json,css,html}": "prettier --config .prettierrc.js --write"
   },
   "config": {
     "commitizen": {
