@@ -2,16 +2,16 @@
 
 记录一些可能会经常使用到的一些文件或者方法。
 
-> 已更新为 ES6 语法，若需要兼容 ES5 语法，请麻烦自行处理。
+> 近期将其更新为 ES6 语法，若需要兼容 ES5 语法，请麻烦自行处理。
 
 ### 目录结构
 
 文件放置于 `utils` 目录下，目前有以下方法：
 
-##### PinYin.js
+##### ConvertToPinyin.js
 
 > 这个是 16 进制中文 Unicode 编码，主要用于**中文转拼音**。
-> 关于中文转拼音思路，看文章：[JS 中文转换拼音的实现](https://www.jianshu.com/p/eb96eac8a091)
+> 关于中文转拼音思路看文章 [JS 中文转换拼音的实现](https://www.jianshu.com/p/eb96eac8a091)，并且 `examples/convertToPinyin.html` 下写了个 Demo。
 
 ##### CheckIDNumber.js
 
