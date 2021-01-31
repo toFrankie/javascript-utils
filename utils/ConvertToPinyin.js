@@ -12,7 +12,7 @@ const convertToPinyin = sourceStr => {
   const cnReg = /[\u4e00-\u9fa5]/
   // 匹配数字和英文
   const enReg = /[a-zA-Z0-9]/
-  // 保留英文和数字，否则为false
+  // 保留英文和数字
   const keep = true
 
   // 遍历源数据
