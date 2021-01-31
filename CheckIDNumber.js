@@ -1,12 +1,12 @@
 /**
- * 支持15位和18位身份证号校验
+ * 支持 15 位和 18 位身份证号校验
  * 关于身份证校验码可以看：https://baike.baidu.com/item/身份证校验码/3800388
  *
  * @param {string} code 身份证号码
  * @returns {boolean} 是否检验通过
  */
 function checkIDNumber(code) {
-  var city = {
+  const city = {
     11: '北京',
     12: '天津',
     13: '河北',
@@ -42,37 +42,37 @@ function checkIDNumber(code) {
     81: '香港',
     82: '澳门',
     91: '国外'
-  };
-  var verify = true;
+  }
+  let verify = true
 
   if (!code || typeof code !== 'string') {
     // 请检查实参
-    verify = false;
+    verify = false
   } else if (!/^\d{6}(18|19|20)?\d{2}(0[1-9]|1[012])(0[1-9]|[12]\d|3[01])\d{3}(\d|X)$/i.test(code)) {
     // 身份证号码格式错误
-    verify = false;
+    verify = false
   } else if (!city[code.substr(0, 2)]) {
     // 身份证号码地址编码错误
-    verify = false;
+    verify = false
   } else {
     // 18 位身份证需要验证最后一位校验位
     if (code.length === 18) {
-      code = code.split('');
-      var factor = [7, 9, 10, 5, 8, 4, 2, 1, 6, 3, 7, 9, 10, 5, 8, 4, 2];
-      var parity = [1, 0, 'X', 9, 8, 7, 6, 5, 4, 3, 2];
-      var sum = 0;
-      var ai = 0;
-      var wi = 0;
-      for (var i = 0; i < 17; i++) {
-        ai = code[i];
-        wi = factor[i];
-        sum += ai * wi;
+      code = code.split('')
+      const factor = [7, 9, 10, 5, 8, 4, 2, 1, 6, 3, 7, 9, 10, 5, 8, 4, 2]
+      const parity = [1, 0, 'X', 9, 8, 7, 6, 5, 4, 3, 2]
+      let sum = 0
+      let ai = 0
+      let wi = 0
+      for (let i = 0; i < 17; i++) {
+        ai = code[i]
+        wi = factor[i]
+        sum += ai * wi
       }
       if (parity[sum % 11] != code[17].toUpperCase()) {
         // 身份证号码校验位错误
-        verify = false;
+        verify = false
       }
     }
   }
-  return verify;
+  return verify
 }
