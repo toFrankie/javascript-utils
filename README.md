@@ -10,7 +10,7 @@
 
 ##### ConvertToPinyin.js
 
-> **中文转拼音**，Demo 在 `examples/convertToPinyin.html` 下，思路看[文章](https://www.jianshu.com/p/eb96eac8a091)。
+> **中文转拼音**，Demo 在 `examples/convertToPinyin.html`，思路看[文章](https://www.jianshu.com/p/eb96eac8a091)。
 
 ##### CheckIDNumber.js
 
