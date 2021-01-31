@@ -10,8 +10,7 @@
 
 ##### ConvertToPinyin.js
 
-> 这个是 16 进制中文 Unicode 编码，主要用于**中文转拼音**。
-> 关于中文转拼音思路看文章 [JS 中文转换拼音的实现](https://www.jianshu.com/p/eb96eac8a091)，并且 `examples/convertToPinyin.html` 下写了个 Demo。
+> **中文转拼音**，Demo 在 `examples/convertToPinyin.html` 下，思路看[文章](https://www.jianshu.com/p/eb96eac8a091)。
 
 ##### CheckIDNumber.js
 
