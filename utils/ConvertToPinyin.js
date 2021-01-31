@@ -1,11 +1,72 @@
+// Demo 请看 example/convertToPinyin.html
+
 /**
- * 用处：将中文字符转拼音
+ * 转换成拼音（若有空格、特殊字符将被移除）
  *
+ * @param {string} sourceStr 原始数据
+ */
+const convertToPinyin = sourceStr => {
+  // 目标数据
+  let targetStr = ''
+  // 匹配中文
+  const cnReg = /[\u4e00-\u9fa5]/
+  // 匹配数字和英文
+  const enReg = /[a-zA-Z0-9]/
+  // 保留英文和数字，否则为false
+  const keep = true
+
+  // 遍历源数据
+  for (let i = 0, len = sourceStr.length; i < len; i++) {
+    const str = sourceStr.substr(i, 1)
+    if (keep && enReg.test(str)) {
+      targetStr += str
+    } else if (cnReg.test(str)) {
+      const searchResult = searchPinYin(str, PinYin)
+      if (searchResult) {
+        // targetStr += searchResult
+        targetStr += firstCapital(searchResult) // 首字母大写
+      }
+    }
+  }
+
+  return targetStr
+}
+
+/**
+ * 检索拼音
+ *
+ * @param {string} str 源字符串
+ * @param {object} data 收集的拼音 Unicode 编码集合
+ */
+const searchPinYin = (str, data) => {
+  for (const key in data) {
+    if (data.hasOwnProperty(key) && data[key].indexOf(str) !== -1) {
+      return key
+    }
+  }
+  return ''
+}
+
+/**
+ * 将拼音首字母转换为大写
+ *
+ * @param {string} str 源字符串
+ */
+const firstCapital = str => {
+  if (str) {
+    const [first] = str
+    const other = str.replace(/^\S/, '')
+    return `${first.toUpperCase()}${other}`
+  }
+  return str
+}
+
+/**
  * 目前这个 16 进制 Unicode 编码是网上收集的，可能不能覆盖所有的中文字符，可以自行补充；
  *
  * 例如：‘婋’（xiao）字：
  * 1、使用 '婋'.charCodeAt(0).toString(16) 得到 Unicode 编码：5a4b；
- * 2、将编码前面加上： \u  => \u5a4b;
+ * 2、将编码前面加上：\u => \u5a4b;
  * 3、然后放到对象 PinYin['xiao'] 里面。
  *
  * 现在只想到了这种笨方法一个一个往里补充，如果有更好的方法，欢迎指出！！！
