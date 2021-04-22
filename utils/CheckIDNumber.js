@@ -5,7 +5,7 @@
  * @param {string} code 身份证号码
  * @returns {boolean} 是否检验通过
  */
-function checkIDNumber(code) {
+const checkIDNumber = code => {
   const city = {
     11: '北京',
     12: '天津',
