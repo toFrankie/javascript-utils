@@ -27,3 +27,9 @@
 ##### GetClass.js
 
 > 判断一个值的类型，可区分“对象”（包括基于 Object 派生的其他类型，如 Object、Array、Function、Date、RegExp 等）。关于 JavaScript 的数据类型分类，看下这篇[文章](https://www.jianshu.com/p/ddc45fab9e55)。
+
+##### DeepCopy.js
+
+> 自实现的深拷贝方法，主要面向学习与面试，详细的实现思路请看[文章](https://www.jianshu.com/p/b8518f40564a)。
+>
+> **请注意，如果生产环境使用 `JSON.stringify()` 无法解决你的需求，请使用 [Lodash](https://www.lodashjs.com/) 库的 [`_.cloneDeep()`](https://www.lodashjs.com/docs/lodash.cloneDeep) 方法，那个才叫面面俱到。千万别用我这方法，切记！**
