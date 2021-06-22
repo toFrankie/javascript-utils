@@ -5,7 +5,7 @@
  * @param {*} source 被拷贝的值
  * @returns 返回一个拷贝值
  */
-export const deepCopy = source => {
+const deepCopy = source => {
   // 创建一个 WeakMap 对象，记录已拷贝过的对象
   const weakmap = new WeakMap()
 
@@ -89,10 +89,8 @@ export const deepCopy = source => {
     if (typeof input === 'function' || !isObject(input)) return input
 
     // 针对已拷贝过的对象，直接返回（解决循环引用的问题）
-    if (weakmap.get(input)) return input
-
-    // 记录每次拷贝的对象
-    weakmap.set(input, true)
+    const tmpValue = weakmap.get(input)
+    if (tmpValue) return tmpValue
 
     // 处理包装对象
     if (isSepcialObject(input)) {
@@ -101,6 +99,9 @@ export const deepCopy = source => {
 
     // 创建输出对象
     const output = isArray(input) ? [] : initCloneObject(input)
+
+    // 记录每次拷贝的对象
+    weakmap.set(input, output)
 
     // 仅遍历对象自身可枚举的属性（包括字符串属性和 Symbol 属性）
     Reflect.ownKeys(input).forEach(key => {
