@@ -89,8 +89,9 @@ const deepCopy = source => {
     if (typeof input === 'function' || !isObject(input)) return input
 
     // 针对已拷贝过的对象，直接返回（解决循环引用的问题）
-    const tmpValue = weakmap.get(input)
-    if (tmpValue) return tmpValue
+    if (weakmap.has(input)) {
+      return weakmap.get(input)
+    }
 
     // 处理包装对象
     if (isSepcialObject(input)) {
