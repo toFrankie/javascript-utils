@@ -33,3 +33,11 @@
 > 自实现的深拷贝方法，主要面向学习与面试，详细的实现思路请看[文章](https://www.jianshu.com/p/b8518f40564a)。
 >
 > **请注意，如果生产环境使用 `JSON.stringify()` 无法解决你的需求，请使用 [Lodash](https://www.lodashjs.com/) 库的 [`_.cloneDeep()`](https://www.lodashjs.com/docs/lodash.cloneDeep) 方法，那个才叫面面俱到。千万别用我这方法，切记！**
+
+##### Debounce.js
+
+> 函数防抖，思路请看[文章](https://www.jianshu.com/p/b8c42b098ee2)。
+
+##### Throttle.js
+
+> 函数节流，思路请看[文章](https://www.jianshu.com/p/b8c42b098ee2)。
