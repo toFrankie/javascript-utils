@@ -14,7 +14,7 @@
 
 ##### CheckIDNumber.js
 
-> 最全面的身份证号码校验，支持 15 位和 18 位的身份证号码。
+> 最全面的身份证号码校验，支持 15 位和 18 位的身份证号码（[文章](https://www.jianshu.com/p/c13713caac8d)）。
 
 ##### GetSubdomain.js
 
