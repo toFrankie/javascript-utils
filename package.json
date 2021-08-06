@@ -3,7 +3,10 @@
   "version": "1.0.0",
   "description": "一些实用的 JavaScript 方法",
   "main": "src/index.js",
-  "repository": "git@github.com:toFrankie/Some-JavaScript-File.git",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/toFrankie/Some-JavaScript-File.git"
+  },
   "author": "Frankie <1426203851@qq.com>",
   "license": "MIT",
   "private": false,
