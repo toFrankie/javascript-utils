@@ -1,4 +1,3 @@
-# 忽略文件
 typings
 node_modules
 .eslintcache
