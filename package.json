@@ -1,37 +1,37 @@
 {
-  "name": "some-tools",
-  "version": "1.0.0",
+  "name": "javascript-utils",
+  "version": "0.0.1",
   "description": "一些实用的 JavaScript 方法",
   "main": "src/index.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/toFrankie/Some-JavaScript-File.git"
+    "url": "https://github.com/toFrankie/javascript-utils.git"
   },
   "author": "Frankie <1426203851@qq.com>",
   "license": "MIT",
   "private": false,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "eslint:fix": "eslint --fix . --ext .js",
-    "prettier:fix": "prettier --config .prettierrc.js --write './**/*.{js,css,html,json}'",
-    "format": "npm-run-all -s prettier:fix eslint:fix",
     "commit": "git-cz",
-    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0"
+    "lint": "npm-run-all -s prettier:fix eslint:fix",
+    "eslint:fix": "eslint --cache --fix . --ext .js",
+    "prettier:fix": "prettier --config .prettierrc.js --write './**/*.{js,css,html,json}'",
+    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
-    "babel-eslint": "10.0.3",
-    "commitizen": "4.2.1",
-    "conventional-changelog-cli": "2.1.0",
-    "cz-conventional-changelog": "3.3.0",
-    "eslint": "6.7.1",
-    "eslint-config-alloy": "3.7.1",
-    "eslint-config-prettier": "6.10.0",
-    "eslint-plugin-prettier": "3.1.4",
-    "husky": "4.3.0",
-    "lint-staged": "10.3.0",
-    "npm-run-all": "4.1.5",
-    "prettier": "2.0.5",
-    "prettier-eslint-cli": "5.0.0"
+    "babel-eslint": "^10.0.3",
+    "commitizen": "^4.2.1",
+    "conventional-changelog-cli": "^2.1.0",
+    "cz-conventional-changelog": "^3.3.0",
+    "eslint": "^6.7.1",
+    "eslint-config-alloy": "^3.7.1",
+    "eslint-config-prettier": "^6.10.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "husky": "^4.3.0",
+    "lint-staged": "^10.3.0",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^2.6.2",
+    "prettier-eslint-cli": "^5.0.0"
   },
   "husky": {
     "hooks": {
