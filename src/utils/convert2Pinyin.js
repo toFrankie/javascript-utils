@@ -1,11 +1,11 @@
-// Demo 请看 example/convertToPinyin.html
+// Demo 请看 example/convert2Pinyin.html
 
 /**
  * 转换成拼音（若有空格、特殊字符将被移除）
  *
  * @param {string} sourceStr 原始数据
  */
-export const convertToPinyin = sourceStr => {
+export const convert2Pinyin = sourceStr => {
   // 目标数据
   let targetStr = ''
   // 匹配中文
@@ -24,7 +24,7 @@ export const convertToPinyin = sourceStr => {
       const searchResult = searchPinYin(str, PinYin)
       if (searchResult) {
         // targetStr += searchResult
-        targetStr += firstCapital(searchResult) // 首字母大写
+        targetStr += capitalize(searchResult) // 首字母大写
       }
     }
   }
@@ -48,11 +48,9 @@ const searchPinYin = (str, data) => {
 }
 
 /**
- * 将拼音首字母转换为大写
- *
- * @param {string} str 源字符串
+ * 将首字母转换为大写
  */
-const firstCapital = str => {
+const capitalize = str => {
   if (str) {
     const [first] = str
     const other = str.replace(/^\S/, '')
@@ -71,7 +69,6 @@ const firstCapital = str => {
  *
  * 现在只想到了这种笨方法一个一个往里补充，如果有更好的方法，欢迎指出！！！
  */
-
 const PinYin = {
   a: '\u554a\u963f\u9515',
   ai: '\u57c3\u6328\u54ce\u5509\u54c0\u7691\u764c\u853c\u77ee\u827e\u788d\u7231\u9698\u8bf6\u6371\u55f3\u55cc\u5ad2\u7477\u66a7\u7839\u953f\u972d',

@@ -11,7 +11,6 @@
  * 推荐文章：https://www.jianshu.com/p/ddc45fab9e55
  */
 export const getClass = x => {
-  const { toString } = Object.prototype
-  const str = toString.call(x)
+  const str = Object.prototype.toString.call(x)
   return /^\[object (.*)\]$/.exec(str)[1]
 }

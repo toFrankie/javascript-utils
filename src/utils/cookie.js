@@ -3,15 +3,15 @@
  *
  * Usage:
  *
- * docCookies.setItem(name, value[, end[, path[, domain[, secure]]]])
- * docCookies.getItem(name)
- * docCookies.removeItem(name[, path], domain)
- * docCookies.hasItem(name)
- * docCookies.keys()
+ * cookie.setItem(name, value[, end[, path[, domain[, secure]]]])
+ * cookie.getItem(name)
+ * cookie.removeItem(name[, path], domain)
+ * cookie.hasItem(name)
+ * cookie.keys()
  *
  * Details: https://developer.mozilla.org/zh-CN/docs/Web/API/Document/cookie
  */
-export const docCookies = {
+export const cookie = {
   getItem(sKey) {
     return (
       decodeURIComponent(
