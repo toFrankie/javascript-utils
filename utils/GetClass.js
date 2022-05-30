@@ -10,7 +10,7 @@
  * 其中 Object.prototype.toString() 是唯一一个可以访问对象内部 [[Class]] 属性的方法。
  * 推荐文章：https://www.jianshu.com/p/ddc45fab9e55
  */
-const getClass = x => {
+export const getClass = x => {
   const { toString } = Object.prototype
   const str = toString.call(x)
   return /^\[object (.*)\]$/.exec(str)[1]

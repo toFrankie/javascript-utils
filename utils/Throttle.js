@@ -6,7 +6,7 @@
  * @param {number} wait 需要节流的毫秒数
  * @returns {Function} 返回节流的函数
  */
-const throttle = (func, wait) => {
+export const throttle = (func, wait) => {
   let prev = 0
   let timerId
 

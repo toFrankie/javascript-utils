@@ -11,13 +11,15 @@
  *
  * Details: https://developer.mozilla.org/zh-CN/docs/Web/API/Document/cookie
  */
-const docCookies = {
+export const docCookies = {
   getItem(sKey) {
     return (
       decodeURIComponent(
         document.cookie.replace(
           new RegExp(
-            '(?:(?:^|.*;)\\s*' + encodeURIComponent(sKey).replace(/[-.+*]/g, '\\$&') + '\\s*\\=\\s*([^;]*).*$)|^.*$'
+            '(?:(?:^|.*;)\\s*' +
+              encodeURIComponent(sKey).replace(/[-.+*]/g, '\\$&') +
+              '\\s*\\=\\s*([^;]*).*$)|^.*$'
           ),
           '$1'
         )
@@ -34,7 +36,8 @@ const docCookies = {
     if (vEnd) {
       switch (vEnd.constructor) {
         case Number:
-          sExpires = vEnd === Infinity ? '; expires=Fri, 31 Dec 9999 23:59:59 GMT' : '; max-age=' + vEnd
+          sExpires =
+            vEnd === Infinity ? '; expires=Fri, 31 Dec 9999 23:59:59 GMT' : '; max-age=' + vEnd
           break
         case String:
           sExpires = '; expires=' + vEnd
@@ -68,15 +71,15 @@ const docCookies = {
   },
 
   hasItem(sKey) {
-    return new RegExp('(?:^|;\\s*)' + encodeURIComponent(sKey).replace(/[-.+*]/g, '\\$&') + '\\s*\\=').test(
-      document.cookie
-    )
+    return new RegExp(
+      '(?:^|;\\s*)' + encodeURIComponent(sKey).replace(/[-.+*]/g, '\\$&') + '\\s*\\='
+    ).test(document.cookie)
   },
 
   /* optional method: you can safely remove it! */
   keys() {
     const aKeys = document.cookie
-      .replace(/((?:^|\s*;)[^\=]+)(?=;|$)|^\s*|\s*(?:\=[^;]*)?(?:\1|$)/g, '')
+      .replace(/((?:^|\s*;)[^\=]+)(?=;|$)|^\s*|\s*(?:\=[^;]*)?(?:|$)/g, '')
       .split(/\s*(?:\=[^;]*)?;\s*/)
     for (let nIdx = 0; nIdx < aKeys.length; nIdx++) {
       aKeys[nIdx] = decodeURIComponent(aKeys[nIdx])
