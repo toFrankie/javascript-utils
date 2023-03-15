@@ -8,23 +8,23 @@
 export const checkIDNumber = code => {
   if (!code || typeof code !== 'string') return false
   // prettier-ignore
-  const cites = ['11', '12', '13', '14', '15', '21', '22', '23', '31', '32', '33', '34', '35', '36', '37', '41', '42', '43', '44', '45', '46', '50', '51', '52', '53', '54', '61', '62', '63', '64', '65', '71', '81', '82', '91']
-  const re = /^\d{6}(18|19|20)?\d{2}(0[1-9]|1[012])(0[1-9]|[12]\d|3[01])\d{3}(\d|X)?$/i
-  const len = code.length
+  const provinceCodes = ['11', '12', '13', '14', '15', '21', '22', '23', '31', '32', '33', '34', '35', '36', '37', '41', '42', '43', '44', '45', '46', '50', '51', '52', '53', '54', '61', '62', '63', '64', '65', '71', '81', '82', '91']
+  const reg = /^\d{6}(18|19|20)?\d{2}(0[1-9]|1[012])(0[1-9]|[12]\d|3[01])\d{3}(\d|X)?$/i
+  const codeLen = code.length
 
   // 格式错误
-  if (!(re.test(code) && (len === 15 || len === 18))) {
+  if (!reg.test(code) || ![15, 18].includes(codeLen)) {
     return false
   }
 
   // 地址码错误
-  const cityCode = code.substr(0, 2)
-  if (!cites.includes(cityCode)) {
+  const provinceCode = code.substring(0, 2)
+  if (!provinceCodes.includes(provinceCode)) {
     return false
   }
 
   // 18 位需校验最后一位校验码
-  if (len === 18) {
+  if (codeLen === 18) {
     const codeArr = code.split('')
     const factor = [7, 9, 10, 5, 8, 4, 2, 1, 6, 3, 7, 9, 10, 5, 8, 4, 2]
     const parity = [1, 0, 'X', 9, 8, 7, 6, 5, 4, 3, 2]
@@ -87,7 +87,7 @@ export const checkIDNumber = code => {
  */
 
 // 地址码前两位，所对应的省市：
-// const cites = {
+// const provinceCodes = {
 //   11: '北京',
 //   12: '天津',
 //   13: '河北',
