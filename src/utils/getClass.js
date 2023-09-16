@@ -8,7 +8,7 @@
  * 4. 如果参数是一个原始值，则会先将其转换为相应的对象，然后按照以上的规则输出。
  *
  * 其中 Object.prototype.toString() 是唯一一个可以访问对象内部 [[Class]] 属性的方法。
- * 推荐文章：https://www.jianshu.com/p/ddc45fab9e55
+ * 推荐文章：https://github.com/toFrankie/blog/issues/239
  */
 export const getClass = x => {
   const str = Object.prototype.toString.call(x)

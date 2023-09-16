@@ -1,22 +1,22 @@
-import { checkIDNumber } from '../../src/utils/checkIDNumber'
+import { checkIdNumber } from '../../src/utils/checkIdNumber'
 
 // 以下身份证号码源自网络，无意冒犯！（侵权删）
-const validIDNumber = '330602193306179353'
-const validIDNumber2 = '53230119481024002X'
-const invalidIDNumber = '220102197407184211' // 220102197407184210
-const invalidIDNumber2 = '630102196809160118' // 630102196809160117
+const validIdNumber = '330602193306179353'
+const validIdNumber2 = '53230119481024002X'
+const invalidIdNumber = '220102197407184211' // 220102197407184210
+const invalidIdNumber2 = '630102196809160118' // 630102196809160117
 
-describe('checkIDNumber.js 模块', () => {
-  test(`正确的二代身份证号码（${validIDNumber}）`, () => {
-    expect(checkIDNumber(validIDNumber)).toEqual(true)
+describe('checkIdNumber.js 模块', () => {
+  test(`正确的二代身份证号码（${validIdNumber}）`, () => {
+    expect(checkIdNumber(validIdNumber)).toEqual(true)
   })
-  test(`正确的二代身份证号码（${validIDNumber2}）`, () => {
-    expect(checkIDNumber(validIDNumber2)).toEqual(true)
+  test(`正确的二代身份证号码（${validIdNumber2}）`, () => {
+    expect(checkIdNumber(validIdNumber2)).toEqual(true)
   })
-  test(`错误的二代身份证号码（${invalidIDNumber}）`, () => {
-    expect(checkIDNumber(invalidIDNumber)).toEqual(false)
+  test(`错误的二代身份证号码（${invalidIdNumber}）`, () => {
+    expect(checkIdNumber(invalidIdNumber)).toEqual(false)
   })
-  test(`错误的二代身份证号码（${invalidIDNumber2}）`, () => {
-    expect(checkIDNumber(invalidIDNumber2)).toEqual(false)
+  test(`错误的二代身份证号码（${invalidIdNumber2}）`, () => {
+    expect(checkIdNumber(invalidIdNumber2)).toEqual(false)
   })
 })
