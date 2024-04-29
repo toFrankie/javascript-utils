@@ -6,7 +6,7 @@
 
 #### 1. convert2Pinyin.js
 
-> 中文转拼音，Demo 在 `examples/convert2Pinyin.html`，思路看[文章](https://github.com/toFrankie/blog/issues/189)。
+> 中文转拼音，Demo 在 `examples/convert2Pinyin.html`，思路看[文章](https://github.com/toFrankie/blog/issues/189)。或许你需要的是 [pinyin-pro](https://github.com/zh-lx/pinyin-pro) 或 [pinyin](https://github.com/hotoo/pinyin)。
 
 #### 2. checkIdNumber.js
 
