@@ -2,11 +2,12 @@
 
 /**
  * 函数节流
- * @param {Function} func 要节流的函数
- * @param {number} wait 需要节流的毫秒数
- * @returns {Function} 返回节流的函数
+ * @template A, R
+ * @param {(...args: A) => R} func 要节流的函数
+ * @param {number} wait 节流时间
+ * @returns {(...args: A) => void} 返回被节流处理的函数
  */
-export const throttle = (func, wait) => {
+export const throttle = (func, wait = 0) => {
   let prev = 0
   let timerId
 
