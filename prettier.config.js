@@ -1,6 +1,1 @@
-export default {
-  semi: false,
-  singleQuote: true,
-  arrowParens: 'avoid',
-  printWidth: 100,
-}
+export default '@tofrankie/prettier'

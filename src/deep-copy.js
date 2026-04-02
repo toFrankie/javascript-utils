@@ -24,17 +24,7 @@ export function deepCopy(source) {
   // 判断是否为“特殊”对象（需要特殊处理）
   const isSepcialObject = obj => {
     const type = getClass(obj)
-    return [
-      'Boolean',
-      'Number',
-      'String',
-      'Symbol',
-      'BigInt',
-      'Date',
-      'Map',
-      'Set',
-      'RegExp',
-    ].includes(type)
+    return ['Boolean', 'Number', 'String', 'Symbol', 'BigInt', 'Date', 'Map', 'Set', 'RegExp'].includes(type)
   }
 
   // 处理特殊对象
@@ -86,10 +76,7 @@ export function deepCopy(source) {
       return Object.create(null)
     }
 
-    if (
-      typeof obj.constructor === 'function' &&
-      (obj !== obj.constructor || obj !== Object.prototype)
-    ) {
+    if (typeof obj.constructor === 'function' && (obj !== obj.constructor || obj !== Object.prototype)) {
       const proto = Object.getPrototypeOf(obj)
       return Object.create(proto)
     }

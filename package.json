@@ -2,20 +2,21 @@
   "name": "@tofrankie/utils",
   "type": "module",
   "version": "0.0.1",
-  "private": false,
-  "packageManager": "pnpm@10.17.0",
-  "description": "一些实用的 JavaScript 方法",
+  "packageManager": "pnpm@10.32.0",
   "author": "Frankie <1426203851@qq.com>",
   "license": "MIT",
   "scripts": {
-    "lint": "eslint . --fix --cache",
-    "test": "vitest"
+    "lint": "pnpm lint:eslint && pnpm lint:prettier",
+    "lint:eslint": "eslint . --cache --fix",
+    "lint:prettier": "prettier . --cache --write '!pnpm-lock.yaml'",
+    "test": "vitest run"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^5.4.1",
-    "eslint": "^9.36.0",
-    "eslint-plugin-format": "^1.0.2",
-    "prettier": "^3.6.2",
-    "vitest": "^3.2.4"
+    "@tofrankie/eslint": "^0.0.17",
+    "@tofrankie/prettier": "^0.0.15",
+    "@vitest/eslint-plugin": "^1.6.14",
+    "eslint": "^9.39.4",
+    "prettier": "^3.8.1",
+    "vitest": "^4.1.2"
   }
 }

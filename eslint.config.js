@@ -1,13 +1,25 @@
-import antfu from '@antfu/eslint-config'
+import { defineConfig } from '@tofrankie/eslint'
+import vitest from '@vitest/eslint-plugin'
 
-export default antfu({
-  formatters: {
-    html: true,
-    markdown: true,
+export default defineConfig(
+  {
+    typescript: false,
+    jsdoc: false,
+    rules: {
+      'regexp/no-unused-capturing-group': 'off',
+      'regexp/no-empty-alternative': 'off',
+      'regexp/no-dupe-disjunctions': 'off',
+      'no-prototype-builtins': 'off',
+      'no-use-before-define': 'off',
+      'e18e/prefer-object-has-own': 'off',
+    },
   },
-  ignores: ['dist/**', 'node_modules/**', 'coverage/**', 'pnpm-lock.yaml'],
-  rules: {
-    curly: 'off',
-    'style/brace-style': 'off',
-  },
-})
+  {
+    files: ['tests/**/*.test.js'],
+    languageOptions: {
+      globals: {
+        ...vitest.configs.env.languageOptions.globals,
+      },
+    },
+  }
+)

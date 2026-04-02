@@ -39,6 +39,7 @@ export function checkIdNumber(code) {
       wi = factor[i]
       sum += ai * wi
     }
+    // eslint-disable-next-line eqeqeq
     if (parity[sum % 11] != codeArr[17].toUpperCase()) {
       // 校验码错误
       return false
